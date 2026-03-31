@@ -1,16 +1,20 @@
-# Function to check palindrome
-def is_palindrome(value):
-    value = str(value)  # Convert to string
-    if value == value[::-1]:
-        return True
-    else:
-        return False
+import os
 
-# Taking input from user
-user_input = input("Enter a string or number: ")
+def is_palindrome(s):
+    return s == s[::-1]
 
-# Checking result
+# fixed input (no input() used)
+user_input = "madam"
+
 if is_palindrome(user_input):
-    print("It is a palindrome ✅")
+    print("Palindrome")
 else:
-    print("Not a palindrome ❌")
+    print("Not Palindrome")
+
+# secret check
+secret = os.getenv("MY_SECRET")
+
+if secret:
+    print("Secret loaded successfully")
+else:
+    print("No secret found")
