@@ -1,0 +1,16 @@
+name: Run Palindrome Code
+
+on: [push]
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+
+    env:
+      MY_SECRET: ${{ secrets.MY_SECRET }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run Python Program
+        run: python palindrome.py
